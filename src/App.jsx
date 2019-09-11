@@ -72,6 +72,9 @@ class App extends React.Component {
 		// 押されたボタンはe.targetで求められる
 		// 押されたボタンと一緒にいるやつのkeyはどう求めるのか。
 		const newTodos = this.state.todos.slice()
+		
+		// 以下のif文は、次のように記述できます。
+		// newTodos[key].isDone = !newTodos[key].isDone
 		if (newTodos[key].isDone === false) {
 			newTodos[key].isDone = true
 		} else {
