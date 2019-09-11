@@ -13,12 +13,14 @@ export default class TodoItem extends React.Component {
 		function handleId() {
 			return handleClick(id)
 		}
+		//以下のようにして、handleClickを作成しないアプローチもあります。
+		//<button onClick={()=>{this.props.handleClick(id)}}>{buttonText}</button>
 
 		return (
 			<li>
 				<p>タイトル: {this.props.title}</p>
 				<p>詳細: {this.props.desc}</p>
-				<button onClick={handleId}>{buttonText}</button>
+				<button onClick={handleId}>{buttonText}</button>				
 			</li>
 		)
 	}
