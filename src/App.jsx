@@ -3,6 +3,10 @@ import Form from "./form"
 import TodoList from "./TodoList"
 // import TodoItem from "./TodoItem"
 
+import styled from "styled-components"
+
+const Container = styled.div`
+`
 
 class App extends React.Component {
 	constructor() {
@@ -77,6 +81,9 @@ class App extends React.Component {
 		} else {
 			newTodos[key].isDone = false
 		}
+
+		///////////////////////// 上記のif elseはnewTodos[key].isDone = !newTodos[key].isDone toggle
+
 		// その結果をsetStateする
 		this.setState({
 			todos: newTodos
@@ -85,7 +92,7 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<React.Fragment>
+			<Container>
 				<Form handleSubmit={this.handleSubmit.bind(this)}
 					
 					
@@ -93,7 +100,7 @@ class App extends React.Component {
 				<TodoList todos={this.state.todos}
 						handleClick={this.handleClick.bind(this)}
 				></TodoList>
-			</React.Fragment> //疑似的に囲うやつ
+			</Container> //疑似的に囲うやつ
 		)
 	}
 }

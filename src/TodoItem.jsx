@@ -1,5 +1,11 @@
 import React from "react"
 
+import styled from "styled-components"
+
+const Li = styled.li`
+border-top: solid 3px gray;
+margin-top: 20px;
+`
 
 export default class TodoItem extends React.Component {
 	render() {
@@ -15,11 +21,12 @@ export default class TodoItem extends React.Component {
 		}
 
 		return (
-			<li>
-				<p>タイトル: {this.props.title}</p>
-				<p>詳細: {this.props.desc}</p>
-				<button onClick={handleId}>{buttonText}</button>
-			</li>
+					<Li>
+						<p>タイトル: {this.props.title}</p>
+						<p>詳細: {this.props.desc}</p>
+						{/* <button onClick={handleId}>{buttonText}</button> */}
+						<button onClick={()=>handleClick(this.props.id)}>{buttonText}</button>
+					</Li>
 		)
 	}
 }
